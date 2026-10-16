@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday Sanbi 🎀</title>
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Pacifico&family=Cinzel:wght@600;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--l:#C8B6FF;--p:#FFB7D5;--b:#B8E7FF;--w:#fff;--ink:#4A2F7A;color-scheme:light;box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit;margin:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;background:var(--l)}
+body{font-family:'Fredoka','Trebuchet MS',system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--l) 0,var(--p) 45%,var(--b) 100%) fixed;min-height:100%;overflow-x:hidden}
+#cf{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30}
+#fx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+#fx span{position:absolute;opacity:.85;filter:drop-shadow(0 0 6px rgba(255,255,255,.9));animation:fl 7s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+.sticker-pack{position:fixed;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.sticker{position:absolute;display:grid;place-items:center;width:clamp(48px,12vw,82px);aspect-ratio:1;border:3px solid #fff;border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,222,241,.9));box-shadow:0 7px 0 rgba(74,47,122,.2),0 10px 22px rgba(74,47,122,.22);font-size:clamp(1.7rem,6vw,3rem);rotate:var(--tilt);animation:sticker-bob var(--dur,5s) ease-in-out infinite;animation-delay:var(--delay,0s)}
+.sticker::after{content:'';position:absolute;inset:4px;border:1px dashed rgba(168,59,120,.36);border-radius:13px}
+@keyframes sticker-bob{50%{translate:0 -13px;rotate:calc(var(--tilt) * -1)}}
+body.s2 .sticker-pack,body.s3 .sticker-pack{opacity:.42}
+@media(max-width:430px){.sticker:nth-child(n+6){display:none}}
+.ctl{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:calc(10px + env(safe-area-inset-right,0px));display:flex;gap:8px;z-index:40}
+.ib{width:46px;height:46px;border:1px solid rgba(255,255,255,.8);border-radius:50%;background:rgba(255,255,255,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:1.25rem;cursor:pointer;box-shadow:0 4px 14px rgba(74,47,122,.18)}
+.ib:active{transform:scale(.92)}
+.ib[hidden]{display:none}
+section{position:relative;z-index:1;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:72px 20px calc(28px + env(safe-area-inset-bottom,0px));gap:14px}
+.t1{font-family:'Pacifico','Brush Script MT',cursive;font-size:clamp(2.6rem,14vw,5.6rem);line-height:1.1;color:var(--ink);text-shadow:0 0 14px #fff,0 0 34px rgba(255,255,255,.95),0 0 60px var(--p)}
+.t2{font-weight:700;font-size:clamp(2.2rem,12vw,4.6rem);letter-spacing:.14em;color:var(--w);text-shadow:0 0 10px var(--ink),0 2px 0 var(--ink),0 0 30px var(--p),0 0 50px var(--l);-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill}
+.t3{font-size:clamp(1.15rem,5vw,1.6rem);font-weight:600;max-width:24ch}
+.glass{background:rgba(255,255,255,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:999px;padding:12px 22px;box-shadow:0 8px 26px rgba(74,47,122,.15);font:600 1.05rem 'Fredoka',sans-serif;color:var(--ink);cursor:pointer}
+.hint{margin-top:26px}
+.hint b{display:inline-block;animation:bn 1.6s ease-in-out infinite}
+@keyframes bn{50%{transform:translateY(5px)}}
+.ie{opacity:0}
+.t1.ie{animation:grow 1.7s cubic-bezier(.2,1.25,.3,1) .5s forwards,glow 3.2s ease-in-out 2.3s infinite}
+.t2.ie{animation:fup 1s ease 1.9s forwards,flo 4s ease-in-out 2.9s infinite}
+.t3.ie{animation:fup .9s ease 2.8s forwards}
+.hint.ie{animation:fup .9s ease 3.7s forwards}
+@keyframes grow{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+@keyframes fup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes flo{50%{transform:translateY(-9px)}}
+@keyframes glow{50%{text-shadow:0 0 22px #fff,0 0 50px #fff,0 0 80px var(--p)}}
+.pp{position:absolute;bottom:calc(14px + env(safe-area-inset-bottom,0px));font-size:clamp(3.2rem,16vw,5rem);line-height:1}
+.pp.l{left:8px}.pp.r{right:8px;transform:scaleX(-1)}
+.pp.ie{animation:ppop .9s cubic-bezier(.3,1.7,.5,1) .1s forwards}
+.pp.r.ie{animation-name:ppopr}
+@keyframes ppop{from{opacity:0;transform:scale(.1) rotate(-30deg)}to{opacity:1;transform:none}}
+@keyframes ppopr{from{opacity:0;transform:scaleX(-.1) scaleY(.1)}to{opacity:1;transform:scaleX(-1)}}
+.static .ie{animation:none!important;opacity:1!important;transform:none!important}
+.static .pp.r{transform:scaleX(-1)!important}
+.rv{opacity:0;transform:translateY(24px) scale(.94);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+.go{margin-top:10px;min-height:64px;padding:16px 34px;border:2px solid #fff;border-radius:999px;font:700 clamp(1.2rem,5.5vw,1.6rem) 'Fredoka',sans-serif;color:var(--ink);background:linear-gradient(135deg,var(--p),var(--l) 60%,var(--b));box-shadow:0 0 24px rgba(255,255,255,.9),0 10px 30px rgba(74,47,122,.25);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.in .go{animation:pu 2.4s ease-in-out infinite}
+@keyframes pu{50%{transform:scale(1.05);box-shadow:0 0 40px #fff,0 0 60px var(--p),0 10px 30px rgba(74,47,122,.25)}}
+.go:hover{transform:scale(1.07);box-shadow:0 0 44px #fff,0 0 64px var(--p)}
+.go:active{transform:scale(.96)}
+.sub{font-size:1.1rem;max-width:26ch}
+.ph{font-size:clamp(1.8rem,8vw,3rem);font-weight:700;max-width:16ch;line-height:1.15;text-shadow:0 0 16px #fff}
+#scene-02,#scene-03{display:none}
+body.s2 #scene-01,body.s3 #scene-01{display:none}
+body.s2 #scene-02,body.s3 #scene-03{display:flex}
+#scene-02,#scene-03{--ac:#4FC3FF;position:fixed;inset:0;z-index:5;overflow-x:hidden;overflow-y:auto;padding:72px 20px calc(24px + env(safe-area-inset-bottom,0px));background:radial-gradient(circle at 50% 28%,#1d2f63 0,#111A30 40%,#080B16 82%);color:#EAF2FF;transition:background .6s}
+#scene-02.n,#scene-03.n{--ac:#E8C76A}
+#scene-02.n{background:radial-gradient(circle at 50% 28%,#4a3a17 0,#111A30 42%,#080B16 82%)}
+#scene-02 .st{display:none;position:relative;z-index:2;margin:auto;flex-direction:column;align-items:center;gap:16px;text-align:center;max-width:420px;width:100%}
+#scene-02 .st.on{display:flex;animation:in2 .7s ease}
+@keyframes in2{from{opacity:0;transform:scale(.94)}}
+.jt{font-family:'Cinzel','Times New Roman',serif;font-weight:800;font-size:clamp(1.55rem,7vw,2.3rem);line-height:1.15;text-shadow:0 0 22px var(--ac)}
+.kk{font-size:.95rem;color:#b9c8f2}
+.jb{min-height:54px;padding:12px 24px;border:1.5px solid var(--ac);border-radius:14px;background:rgba(79,195,255,.12);color:#EAF2FF;font:700 1.05rem 'Fredoka',sans-serif;letter-spacing:.05em;box-shadow:0 0 22px -4px var(--ac),inset 0 0 14px rgba(255,255,255,.06);cursor:pointer;transition:transform .15s,box-shadow .2s}
+.n .jb{background:rgba(232,199,106,.12)}
+.jb:hover{box-shadow:0 0 34px var(--ac)}.jb:active{transform:scale(.96)}
+.jg{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:14px 18px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 0 26px -8px var(--ac)}
+#scene-02 .jg.hide,#scene-02 .jb.hide{display:none}
+.jst{position:fixed;inset:0;pointer-events:none;z-index:1}
+.jst i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;box-shadow:0 0 6px #fff;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.15}}
+.jc{position:fixed;left:50%;top:50%;width:min(130vw,900px);margin:calc(min(130vw,900px)/-2) 0 0 calc(min(130vw,900px)/-2);opacity:.3;pointer-events:none;z-index:1;animation:rot 60s linear infinite;fill:none;stroke:var(--ac);stroke-width:.5}
+@keyframes rot{to{transform:rotate(360deg)}}
+.boom .jc{animation:rot 6s linear infinite;opacity:.55}
+#flash{position:fixed;inset:0;background:#e9f6ff;opacity:0;pointer-events:none;z-index:6}
+#flash.on{animation:fsh .9s ease}
+@keyframes fsh{40%{opacity:.95}to{opacity:0}}
+.orb{width:150px;height:150px;border-radius:50%;border:0;cursor:pointer;color:#10183a;font:800 1.05rem 'Fredoka',sans-serif;background:radial-gradient(circle at 35% 30%,#fff,var(--ac) 38%,#2b4aa8 72%,#10183a);box-shadow:0 0 50px var(--ac),0 0 100px rgba(139,92,246,.5);animation:br 2.2s ease-in-out infinite}
+.orb:active{transform:scale(.9)}.orb:disabled{animation:none;filter:saturate(1.3)}
+@keyframes br{50%{transform:scale(1.07)}}
+.meter{width:100%;max-width:300px;height:14px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,#4FC3FF,#8B5CF6,#E8C76A);transition:width .25s}
+.slots{display:flex;gap:12px;justify-content:center}
+.pwc{display:block;width:100%;text-align:center;color:inherit;font:inherit;cursor:pointer;transition:transform .15s,box-shadow .25s}
+.pwc:active{transform:scale(.98)}
+.pwc b{display:block;font-size:1.15rem;margin-bottom:4px}
+.pwc .pd{display:none;margin-top:10px;line-height:1.4}
+.pwc.open .pd{display:block}
+.pwc.open{box-shadow:0 0 36px var(--ac)}
+.rb{position:fixed;inset:0;width:100%;height:100%;z-index:3;pointer-events:none;opacity:0;fill:none;stroke-linecap:round}
+.rb path{stroke-width:5;vector-effect:non-scaling-stroke;stroke-dasharray:1200;stroke-dashoffset:1200;filter:drop-shadow(0 0 8px currentColor)}
+.rb.on{opacity:1;animation:rbf 3.3s ease forwards}
+.rb.on path{animation:rbd 2.4s ease forwards}
+@keyframes rbd{to{stroke-dashoffset:0}}
+@keyframes rbf{80%{opacity:1}to{opacity:0}}
+.idl{position:fixed;inset:-60%;z-index:1;pointer-events:none;opacity:0;transition:opacity .8s;mix-blend-mode:screen;background:conic-gradient(from 0deg at 50% 62%,transparent 0 6%,rgba(79,195,255,.5) 7% 9%,transparent 10% 24%,rgba(255,183,213,.5) 25% 27%,transparent 28% 42%,rgba(139,92,246,.55) 43% 45%,transparent 46% 60%,rgba(232,199,106,.45) 61% 63%,transparent 64% 78%,rgba(184,231,255,.5) 79% 81%,transparent 82%)}
+.idol .idl{opacity:1;animation:rot 9s linear infinite}
+.idt{position:fixed;left:0;right:0;top:36%;text-align:center;z-index:3;pointer-events:none;opacity:0;transition:opacity .8s;font:800 clamp(1.7rem,9vw,3.2rem) 'Cinzel','Times New Roman',serif;text-shadow:0 0 24px #fff,0 0 54px #8B5CF6}
+.idol .idt{opacity:1}
+.tr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;position:relative;z-index:2;overflow:hidden;width:100%;max-width:420px;margin:16px auto auto;padding:96px 20px 34px;border-radius:26px;text-align:center;border:1px solid rgba(255,255,255,.5);box-shadow:0 0 40px -6px #C8B6FF;background:linear-gradient(180deg,#111A30 0,#3a2f7a 14%,#C8B6FF 34%,#FFB7D5 78%,#4FC3FF 100%)}
+#scene-02.fin #j4{margin-bottom:0}
+#scene-02 .tr.hide{display:none}
+.tr>*:not(.tp){position:relative;z-index:1}
+.tr .tcue{position:absolute;top:34px;left:0;right:0;color:#b9c8f2;font-size:.95rem}
+.trt{font:700 clamp(1.3rem,5.8vw,1.9rem)/1.25 'Fredoka',sans-serif;max-width:22ch;color:#3b2566;text-shadow:0 0 18px rgba(255,255,255,.85)}
+.tp{position:absolute;z-index:0;color:#fff;text-shadow:0 0 10px #FFB7D5,0 0 20px #C8B6FF;pointer-events:none;animation:tpf 6s ease-in-out infinite}
+@keyframes tpf{50%{transform:translateY(-18px) rotate(10deg);opacity:.5}}
+.rv2{opacity:0;transform:translateY(26px) scale(.95);transition:opacity .9s,transform .9s}
+.rv2.in{opacity:1;transform:none}
+#scene-02 .trb{position:relative;min-height:66px;max-width:100%;padding:18px 30px;border:2px solid #fff;border-radius:34px;background:linear-gradient(135deg,#FFB7D5,#C8B6FF 55%,#4FC3FF);color:#2a1a4a;font:700 clamp(1rem,4.6vw,1.3rem) 'Fredoka',sans-serif;box-shadow:0 0 26px #fff,0 0 60px rgba(255,183,213,.9),0 0 90px rgba(79,195,255,.55);transition:transform .2s,box-shadow .25s}
+#scene-02 .trb:hover{transform:scale(1.05);box-shadow:0 0 34px #fff,0 0 80px #FFB7D5,0 0 110px rgba(79,195,255,.8)}
+#scene-02 .trb:active{transform:scale(.96)}
+.rv2.in .trb{animation:pu2 2.6s ease-in-out .9s infinite}
+@keyframes pu2{50%{transform:scale(1.04);box-shadow:0 0 36px #fff,0 0 80px #FFB7D5,0 0 110px rgba(79,195,255,.7)}}
+.slot{width:128px;height:150px;border:2px dashed var(--ac);border-radius:16px;display:flex;align-items:center;justify-content:center;padding:8px;font-size:.85rem;color:#c9d6ff;overflow:hidden}
+.slot img{width:100%;height:100%;object-fit:contain}
+#scene-03{align-items:center;justify-content:center;text-align:center}
+#scene-03{--ac:#FF75AD;color:#87516D;background:linear-gradient(180deg,#080B16 0,#3a2f7a 14%,#DCC8FF 34%,#FFB7D5 56%,#FFB7D5 100%) 0 100%/100% 300%}
+body.s3 #scene-03{animation:dawn 2s ease-out}
+@keyframes dawn{from{background-position:0 0}to{background-position:0 100%}}
+#scene-03 .pn{position:relative;z-index:2;max-width:420px;width:100%}
+#scene-03 .pn>*{animation:kin .8s ease both}
+#scene-03 .pn>:nth-child(2){animation-delay:.15s}#scene-03 .pn>:nth-child(3){animation-delay:.3s}#scene-03 .pn>:nth-child(4){animation-delay:.45s}#scene-03 .pn>:nth-child(5){animation-delay:.6s}#scene-03 .pn>:nth-child(6){animation-delay:.75s}
+@keyframes kin{from{opacity:0;transform:translateY(16px) scale(.94)}}
+.kp{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.kp span{position:absolute;color:#fff;text-shadow:0 0 10px #FF75AD,0 0 18px #DCC8FF;animation:kf 6s ease-in-out infinite}
+@keyframes kf{0%,100%{transform:translateY(0) rotate(-8deg) scale(1)}50%{transform:translateY(-18px) rotate(8deg) scale(1.12)}}
+.k0{font:700 .95rem 'Fredoka',sans-serif;letter-spacing:.12em;color:#A83B78;background:#fff;border-radius:999px;padding:8px 18px;box-shadow:0 0 22px rgba(255,117,173,.55)}
+.k1{font:700 clamp(2.8rem,16vw,5.2rem)/1 'Fredoka',sans-serif;letter-spacing:.06em;color:#A83B78;text-shadow:0 0 18px #fff,0 3px 0 #fff,0 0 40px #FF75AD}
+.k2{font:400 clamp(1.7rem,8vw,2.6rem)/1.15 'Pacifico','Brush Script MT',cursive;color:#A83B78;text-shadow:0 0 14px #fff,0 0 26px #fff}
+.kb{position:relative;margin-top:6px;max-width:300px;background:#fff;color:#87516D;border-radius:22px;padding:14px 20px;font-size:1.1rem;font-weight:500;box-shadow:0 10px 30px rgba(168,59,120,.2),0 0 24px rgba(255,255,255,.8)}
+.kb::after{content:"";position:absolute;top:-9px;left:50%;margin-left:-9px;border:9px solid transparent;border-top:0;border-bottom-color:#fff}
+.kf{width:100%;max-width:300px;min-height:110px;display:flex;align-items:center;justify-content:center;padding:14px;border:2px dashed #A83B78;border-radius:22px;background:rgba(255,255,255,.6);font:700 .95rem 'Fredoka',sans-serif;letter-spacing:.05em;color:#87516D}
+.kf img{max-width:100%;max-height:170px;object-fit:contain}
+.kn{min-height:48px;padding:10px 22px;border:0;border-radius:999px;background:#FF75AD;color:#3a0f28;font:700 1rem 'Fredoka',sans-serif;box-shadow:0 5px 0 #A83B78,0 0 22px rgba(255,117,173,.7);cursor:pointer;transition:transform .1s}
+.kn:active{transform:translateY(3px)}
+#scene-04,#scene-05{display:none;position:fixed;inset:0;z-index:5;overflow-x:hidden;overflow-y:auto;background:linear-gradient(180deg,#F0E6FF,#DCC8FF 45%,#F0E6FF);color:#302044;font-family:'Fredoka','Trebuchet MS',sans-serif;text-align:center}
+body.s4 #scene-01,body.s5 #scene-01{display:none}
+body.s4 #scene-04,body.s5 #scene-05{display:block}
+body.s5 #scene-05{display:flex;align-items:center;justify-content:center}
+#scene-05 .p5{display:flex;flex-direction:column;gap:20px;align-items:center;padding:20px}
+.sx{position:relative;overflow:hidden;width:100%;padding:56px 22px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.sx>*{position:relative;z-index:1}
+.dc{position:absolute;z-index:0;pointer-events:none;color:#8B5CF6;opacity:.75;animation:kf 6s ease-in-out infinite}
+.hr{min-height:125vh;min-height:125dvh;justify-content:center;padding:150px 20px 250px}
+.b0{font:700 .9rem 'Fredoka',sans-serif;letter-spacing:.1em;color:#4C2A85;background:#fff;border-radius:999px;padding:8px 16px;box-shadow:0 0 20px rgba(139,92,246,.35)}
+.b1{font:700 clamp(3.4rem,20vw,7rem)/1 'Fredoka',sans-serif;color:#4C2A85;text-shadow:0 0 22px rgba(139,92,246,.6),0 3px 0 #fff;animation:bpop 1.4s cubic-bezier(.2,1.2,.3,1) both}
+@keyframes bpop{from{opacity:0;transform:scale(.4)}}
+.b2{font:400 clamp(1.6rem,8vw,2.6rem)/1.15 'Pacifico','Brush Script MT',cursive;color:#4C2A85;text-shadow:0 0 16px rgba(255,255,255,.9)}
+.b2v{font:700 clamp(1.5rem,7vw,2.3rem)/1.15 'Fredoka',sans-serif;color:#4C2A85;text-shadow:0 0 18px rgba(139,92,246,.4);max-width:18ch}
+.kk2{font:700 .95rem 'Fredoka',sans-serif;letter-spacing:.08em;color:#4C2A85}
+.cm{font-size:1.12rem;line-height:1.5;max-width:34ch}
+.sm{font-size:.9rem;color:#4C2A85}
+.stk{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;border:2px dashed #8B5CF6;border-radius:14px;background:rgba(255,255,255,.75);color:#4C2A85;font:700 .64rem/1.15 'Fredoka',sans-serif;padding:4px;rotate:var(--r,0deg)}
+.stk img{width:100%;height:100%;object-fit:contain}
+.stk.has{border:0;background:none;padding:0}
+.stk.h{position:absolute;width:calc(var(--w)*1px);aspect-ratio:1/1.1;z-index:2}
+@media(min-width:700px){.stk.h{width:calc(var(--w)*1.6px)}.stk{font-size:.78rem}}
+.card{position:relative;max-width:420px;width:100%;background:#fff;border:3px solid #DCC8FF;border-radius:22px;padding:30px 22px 24px;box-shadow:0 14px 36px rgba(139,92,246,.25);rotate:-1.2deg}
+.card::before{content:'';position:absolute;top:-13px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(255,199,226,.9);rotate:-3deg}
+.rib{position:absolute;top:-16px;right:12px;font-size:1.8rem}
+.ct{font:700 1.25rem 'Fredoka',sans-serif;letter-spacing:.08em;color:#4C2A85}
+.cb{font:700 1.5rem/1.25 'Fredoka',sans-serif;margin:8px 0;color:#302044}
+.pw{position:relative;width:min(74vw,290px);margin:12px 0}
+.pc{position:relative;background:#fff;padding:12px 12px 34px;border-radius:12px;box-shadow:0 14px 34px rgba(76,42,133,.3);rotate:-4deg}
+.pc::before,.pc::after{content:'';position:absolute;top:-8px;width:64px;height:22px;background:rgba(255,199,226,.9)}
+.pc::before{left:-16px;rotate:-35deg}.pc::after{right:-16px;rotate:35deg;background:rgba(200,223,255,.9)}
+.pc.lit{animation:lit 1.8s ease}
+@keyframes lit{40%{box-shadow:0 0 50px 12px rgba(139,92,246,.75)}}
+.vm{width:100%;aspect-ratio:3/4;border-radius:8px}
+.ar{position:absolute;font-size:1.5rem;animation:kf 5s ease-in-out infinite}
+.a1{top:-14px;left:-26px}.a2{top:20px;right:-26px}.a3{bottom:24px;left:-24px}.a4{bottom:-12px;right:-20px}
+.gal{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 14px;width:100%;max-width:760px}
+.gc{position:relative;width:calc(50% - 10px);max-width:190px;background:#fff;padding:8px 8px 22px;border-radius:14px;box-shadow:0 8px 22px rgba(139,92,246,.28);rotate:var(--r);transition:rotate .25s,scale .25s}
+.gc::after{content:'💜';position:absolute;top:-10px;right:-6px;font-size:1.2rem}
+.gc:hover,.gc:active{rotate:0deg;scale:1.06}
+.ph{width:100%;aspect-ratio:3/4}
+@media(min-width:700px){.gc{width:calc(25% - 14px)}}
+.bbtn{min-height:56px;padding:14px 28px;border:2px solid #fff;border-radius:999px;background:linear-gradient(135deg,#6d3fe0,#9a78f8);color:#fff;font:700 1.1rem 'Fredoka',sans-serif;box-shadow:0 6px 0 #4C2A85,0 0 24px rgba(139,92,246,.5);cursor:pointer;transition:transform .12s}
+.bbtn:hover{transform:translateY(-2px)}.bbtn:active{transform:translateY(4px);box-shadow:0 2px 0 #4C2A85}
+.ms{font:700 1.1rem 'Fredoka',sans-serif;color:#4C2A85;background:#fff;padding:10px 16px;border-radius:16px;box-shadow:0 6px 18px rgba(139,92,246,.3)}
+.hd{display:none!important}
+.sh{animation:shw 1s ease both}
+@keyframes shw{from{opacity:0;transform:translateY(16px) scale(.96)}}
+#scene-04.rvon .rv:not(.in){opacity:0;translate:0 20px}
+.rv{transition:opacity .9s,translate .9s}
+#scene-04.glow{animation:glw 1.6s ease}
+@keyframes glw{50%{filter:brightness(1.12) saturate(1.25)}}
+.ri{position:fixed;bottom:-30px;z-index:50;pointer-events:none;animation:up 3s ease-in forwards}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+.fn{background:linear-gradient(180deg,#4C2A85,#6d47c4 60%,#7a55d6);color:#fff}
+.fn .b2v,.fn .kk2{color:#fff;text-shadow:0 0 20px rgba(220,200,255,.8)}
+.fn .dc{color:#fff}
+.grp{position:relative;width:100%;max-width:360px;height:330px;margin:10px 0}
+.grp .stk{position:absolute;color:#302044}
+.grp .gm{width:200px;height:130px;left:50%;top:50%;margin:-65px 0 0 -100px}
+.grp .mm{width:54px;height:62px}.grp .vv{width:82px;height:90px}
+.mw{font:700 1.2rem 'Fredoka',sans-serif}
+body.s5 #scene-05{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;overflow:hidden;text-align:left;background:linear-gradient(180deg,#F0E6FF,#FFD9EA 55%,#DCC8FF)}
+.c5{position:relative;z-index:1;display:flex;flex-direction:column;width:100%;max-width:560px;height:100%;margin:0 auto;background:rgba(255,255,255,.55)}
+.ch{display:flex;align-items:center;gap:10px;padding:calc(12px + env(safe-area-inset-top,0px)) 112px 12px 14px;background:#fff;box-shadow:0 2px 14px rgba(139,92,246,.18)}
+.ch b{display:block;color:#4C2A85}.ch small{color:#6b5a85}
+.av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#FFC2D9,#DCC8FF);display:grid;place-items:center;font-weight:700;color:#4C2A85}
+.cl{flex:1;overflow-y:auto;padding:16px 14px 8px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:82%;padding:10px 14px;border-radius:18px;font-size:1.03rem;line-height:1.4;color:#302044;animation:min .35s ease both}
+@keyframes min{from{opacity:0;transform:translateY(8px) scale(.96)}}
+.m.me{align-self:flex-end;background:#E6D5FF;border-bottom-right-radius:6px}
+.m.sn{align-self:flex-start;background:#fff;border-bottom-left-radius:6px;box-shadow:0 2px 10px rgba(139,92,246,.15)}
+.m.ty{display:flex;gap:5px;padding:14px 16px}
+.ty i{width:8px;height:8px;border-radius:50%;background:#8B5CF6;animation:dt 1s ease-in-out infinite}
+.ty i:nth-child(2){animation-delay:.15s}.ty i:nth-child(3){animation-delay:.3s}
+@keyframes dt{50%{transform:translateY(-5px);opacity:.4}}
+.cf{padding:12px 14px calc(12px + env(safe-area-inset-bottom,0px));text-align:center;background:#fff}
+.cf .bbtn:disabled{opacity:.55;cursor:default}
+.sl{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:80px 24px 40px;text-align:center;overflow-y:auto;animation:in2 .7s ease}
+.sl>*:not(.dc):not(.sk){position:relative;z-index:1}
+#sl1{background:linear-gradient(160deg,#FFC2D9,#DCC8FF)}#sl2{background:linear-gradient(160deg,#F0E6FF,#FFE3F0)}#sl3{background:linear-gradient(160deg,#FFC2D9,#F0E6FF 50%,#DCC8FF)}
+.bn{font:800 clamp(1.7rem,8vw,2.4rem)/1.2 'Fredoka',sans-serif;color:#4C2A85;max-width:16ch;animation:bn5 1.6s ease-in-out infinite}
+.bn2{font:700 1.4rem 'Fredoka',sans-serif;color:#4C2A85;animation:bn5 1.6s ease-in-out .3s infinite}
+@keyframes bn5{0%,100%{transform:translateY(0)}40%{transform:translateY(-12px)}}
+.sk{position:absolute;font-size:2.4rem;rotate:var(--r,0deg);animation:kf 5s ease-in-out infinite}
+.nt{position:relative;max-width:400px;width:100%;padding:30px 22px 22px;background:#fffdf7 repeating-linear-gradient(transparent 0 33px,rgba(139,92,246,.2) 33px 34px);border-radius:8px;box-shadow:0 12px 30px rgba(139,92,246,.28);rotate:-1.5deg;font:600 1.4rem/34px 'Caveat','Comic Sans MS',cursive;color:#302044;text-align:left}
+.nt::before{content:'';position:absolute;top:-12px;left:50%;width:84px;height:24px;margin-left:-42px;background:rgba(255,199,226,.9);rotate:3deg}
+.t3x{font:800 clamp(1.7rem,8vw,2.4rem)/1.2 'Fredoka',sans-serif;color:#4C2A85;max-width:16ch}
+.t4{background:linear-gradient(180deg,#7a55d6 0,#DCC8FF 45%,#F0E6FF 100%);padding:170px 22px calc(70px + env(safe-area-inset-bottom,0px))}
+#scene-03 .pn{margin:auto;display:flex;flex-direction:column;align-items:center;gap:16px;max-width:380px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ie{opacity:1!important;transform:none!important}.pp.r{transform:scaleX(-1)!important}.rv{opacity:1;transform:none}#cf{display:none}}
+
+/* ---------- Polish pass: clearer hierarchy, responsive cards, and scene 03 interaction ---------- */
+button{touch-action:manipulation}
+button:focus-visible{outline:3px solid #fff;outline-offset:4px;box-shadow:0 0 0 6px rgba(76,42,133,.55)}
+[hidden]{display:none!important}
+#scene-01 #reveal{background:radial-gradient(ellipse at center,rgba(255,255,255,.28),transparent 68%)}
+#scene-01 .glass{max-width:min(92vw,420px);line-height:1.35}
+#scene-01 .go{max-width:100%;line-height:1.25}
+#scene-02 .st p:not(.kk){max-width:34ch;line-height:1.55}
+#scene-02 .jb{max-width:100%;line-height:1.35}
+#scene-03 .pn{padding:24px 18px;border:1px solid rgba(255,255,255,.72);border-radius:30px;background:rgba(255,255,255,.22);box-shadow:0 18px 55px rgba(135,81,109,.12);backdrop-filter:blur(7px)}
+#scene-03 .kb{line-height:1.45}
+#scene-03 .lara-frame{width:min(100%,310px);min-height:190px;border:2px dashed rgba(168,59,120,.62);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.85),rgba(255,255,255,.42));box-shadow:0 12px 34px rgba(168,59,120,.15);font-size:1rem}
+#scene-03 .lara-frame img{max-height:240px}
+.lara-note{width:100%;max-width:340px;padding:20px 18px;border:1px solid rgba(255,255,255,.95);border-radius:24px;background:rgba(255,255,255,.88);box-shadow:0 14px 36px rgba(168,59,120,.2);animation:kin .55s ease both}
+.lara-note h2{font-size:1.45rem;color:#A83B78;margin:8px 0}
+.lara-note p{line-height:1.5}
+.lara-note .lara-eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;color:#A83B78}
+.lara-note .fan-note{font-size:.78rem;margin-top:12px;color:#87516D;opacity:.85}
+#scene-03 .kn{max-width:100%;line-height:1.35;padding-inline:20px}
+#scene-03 .back-scene{background:#fff;color:#87516D;box-shadow:0 4px 0 rgba(168,59,120,.3)}
+#scene-04 .sx{scroll-margin-top:18px}
+#scene-04 .card,#scene-04 .pc,#scene-04 .gc{transition:transform .25s,box-shadow .25s}
+#scene-04 .card:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(139,92,246,.3)}
+#scene-04 .gc:focus-within{outline:3px solid #8B5CF6;outline-offset:3px}
+#scene-05 .ch{position:sticky;top:0;z-index:2}
+#scene-05 .cf{position:sticky;bottom:0;margin-top:auto}
+#scene-05 .sl{overscroll-behavior:contain}
+@media(min-width:700px){
+  section{padding-inline:32px}
+  #scene-03 .pn{max-width:520px;padding:30px}
+  #scene-03 .lara-note{max-width:400px}
+}
+@media(max-width:380px){
+  .ctl{gap:6px;right:8px}
+  .ib{width:42px;height:42px}
+  section{padding-inline:14px}
+  #scene-03 .pn{padding:18px 12px}
+  #scene-03 .kn{font-size:.92rem}
+}
+
+</style>
+</head>
+<body>
+<canvas id="cf" aria-hidden="true"></canvas>
+<div id="fx" aria-hidden="true"></div>
+<div class="sticker-pack" aria-hidden="true">
+  <span class="sticker" style="left:3%;top:14%;--tilt:-12deg;--dur:4.8s">🎂</span>
+  <span class="sticker" style="right:3%;top:18%;--tilt:10deg;--dur:5.7s;--delay:-1.2s">🎀</span>
+  <span class="sticker" style="left:4%;bottom:14%;--tilt:9deg;--dur:5.2s;--delay:-2.1s">💜</span>
+  <span class="sticker" style="right:4%;bottom:13%;--tilt:-10deg;--dur:6s;--delay:-.7s">✨</span>
+  <span class="sticker" style="left:12%;top:47%;--tilt:7deg;--dur:5.4s;--delay:-3s">🦋</span>
+  <span class="sticker" style="right:11%;top:50%;--tilt:-7deg;--dur:4.6s;--delay:-1.8s">🎵</span>
+</div>
+<div class="ctl">
+  <button class="ib" id="music" hidden aria-label="Play background music" aria-pressed="false">🎵</button>
+  <button class="ib" id="mute" aria-label="Mute sound" aria-pressed="false">🔊</button>
+</div>
+
+<main id="scene-01">
+  <section id="hero">
+    <span class="pp l ie" aria-hidden="true">🎉</span>
+    <span class="pp r ie" aria-hidden="true">🎉</span>
+    <h1 class="t1 ie">Happy Birthday</h1>
+    <div class="t2 ie">SANBI ♡</div>
+    <p class="t3 ie">Today is all about you ✨</p>
+    <button class="glass hint ie" id="hint" aria-label="Scroll to reveal the birthday surprise">Psst… your birthday surprise is waiting <b aria-hidden="true">↓</b></button>
+  </section>
+  <section id="reveal">
+    <p class="sub rv" id="rv1">Okay, you found it. 🎀</p>
+    <button class="go rv" id="go">Yay! It's my birthday 🎀</button>
+  </section>
+</main>
+
+<section id="scene-02" aria-label="Scene 02 — The Birthday Adventure">
+  <div class="jst" id="jst" aria-hidden="true"></div>
+  <svg class="jc" viewBox="-100 -100 200 200" aria-hidden="true"><circle r="96" stroke-dasharray="3 2"/><circle r="78"/><circle r="52" stroke-dasharray="1 3"/><rect x="-55" y="-55" width="110" height="110"/><rect x="-55" y="-55" width="110" height="110" transform="rotate(45)"/></svg>
+  <div id="flash" aria-hidden="true"></div>
+  <svg class="rb" id="rb" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 720C90 480 300 700 420 330" stroke="#4FC3FF" style="color:#4FC3FF"/><path d="M-20 560C120 360 280 560 420 180" stroke="#FFB7D5" style="color:#FFB7D5"/><path d="M-20 400C100 240 300 420 420 60" stroke="#C8B6FF" style="color:#C8B6FF"/></svg>
+  <div class="idl" aria-hidden="true"></div>
+  <div class="idt" aria-hidden="true">INFINITE IDOLVERSE</div>
+  <div class="st on" id="j1">
+    <p class="kk">Scene 02 — The Birthday Adventure</p>
+    <h2 class="jt">A strange presence approaches...</h2>
+    <p>Sanbi's starlight is gathering — a dreamy, music-powered technique inspired by Gojo's Limitless energy.</p>
+    <button class="jb" id="expand">DOMAIN EXPANSION: INFINITE IDOLVERSE</button>
+    <button class="jb" id="back2" style="min-height:44px;font-size:.9rem;border-color:rgba(255,255,255,.3);box-shadow:none">← Back to Scene 01</button>
+  </div>
+  <div class="st" id="j2">
+    <h2 class="jt">Domain expanded. Choose your side, sorcerer.</h2>
+    <button class="jb t" data-t="g">TEAM GOJO 🔵 Limitless</button>
+    <button class="jb t" data-t="n">TEAM NANAMI 🟡 Overtime</button>
+    <div class="jg hide" id="o2" aria-live="polite"></div>
+    <button class="jb hide" id="c2">CHARGE YOUR POWER →</button>
+  </div>
+  <div class="st" id="j3">
+    <h2 class="jt">Charge your cursed energy</h2>
+    <p>Tap the orb until the meter is full.</p>
+    <button class="orb" id="orb" aria-label="Charge cursed energy">TAP</button>
+    <div class="meter" role="progressbar" aria-label="Cursed energy" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="mt"><i id="mi"></i></div>
+    <p class="kk" id="pct">Cursed energy: 0%</p>
+    <div class="jg hide" id="o3" aria-live="polite"><h2 class="jt" style="font-size:1.4rem">MAX POWER. Happy Birthday, Sanbi!</h2><p id="fm" style="margin-top:8px"></p><div class="slots" id="slots" style="margin-top:12px"></div></div>
+    <button class="jb hide" id="pw">REVEAL YOUR POWERS ✨</button>
+  </div>
+  <div class="st" id="j4">
+    <h2 class="jt">Sanbi's custom powers ✨</h2>
+    <p class="kk">Tap each power to unleash it.</p>
+    <button class="jg pwc" id="p1" aria-expanded="false"><b class="jt">Cursed Technique: Infinite Starlight</b><span class="kk">Tap to unleash</span><span class="pd">Inspired by Gojo's Limitless, dazzling energy and Sanbi's love of music and dreamy aesthetics. Sanbi can turn starlight into glowing ribbons of energy, creating dazzling illusions, protective barriers, and bursts of cosmic light.</span></button>
+    <button class="jg pwc" id="p2" aria-expanded="false"><b class="jt">Domain Expansion: Infinite Idolverse</b><span class="kk">Tap to unleash</span><span class="pd">A personalized blend of KATSEYE's star power, BTS's musical emotion, and JJK's cosmic intensity. The battlefield transforms into an endless galaxy of glowing stages, floating stars, and celestial lights. Every movement creates waves of energy, and the domain overwhelms opponents with an endless constellation of possibilities.</span></button>
+    
+  </div>
+<div class="tr hide" id="tr">
+    
+    <p class="trt rv2">Your Domain has been conquered… but there's another world waiting for you. ✨</p>
+    <div class="rv2"><button class="jb trb" id="kat">LET'S SEE WHAT'S KATSEYE WANT TO SAY ! 🎀</button></div>
+  </div>
+</section>
+<section id="scene-03" aria-labelledby="s3t">
+  <div class="kp" id="kp" aria-hidden="true"></div>
+  <div class="pn">
+    <p class="k0">✦ YOUR NEXT SURPRISE ✦</p>
+    <h1 class="k1" id="s3t">KATSEYE 💗</h1>
+    <h2 class="k2">A Little Birthday Love!</h2>
+    <p class="kb">Someone special has a message for Sanbi...</p>
+    <div class="kf lara-frame" id="kf" role="img" aria-label="Replaceable Lara sticker placeholder">[ LARA STICKER HERE 💗 ]</div>
+    <div class="lara-note" id="laraNote" hidden aria-live="polite">
+      <p class="lara-eyebrow">LARA'S BIRTHDAY MESSAGE 🎀</p>
+      <h2>Happy Birthday, Sanbi! 💕</h2>
+      <p>Hope your day is full of confidence, love, happy surprises, and moments that make you feel like the star of your own story. Keep shining bright! ✨</p>
+      <p class="fan-note">A fan-made birthday surprise — not an actual message from Lara.</p>
+    </div>
+    <button class="kn" id="laraReveal">UNLOCK LARA'S MESSAGE 💗</button>
+    <button class="kn" id="to4" hidden>LET'S KEEP THE PARTY GOING →</button>
+    <button class="kn back-scene" id="back3">← Back to Scene 02</button>
+  </div>
+</section>
+
+<div id='scene-04' role='region' aria-label='Scene 04: BTS birthday surprise'>
+  <div class='sx hr' id='hero4'>
+    <p class='b0'>✦ A SPECIAL SURPRISE FOR YOU ✦</p>
+    <h1 class='b1'>BTS 💜</h1>
+    <h2 class='b2'>A Little Birthday Love!</h2>
+    <p class='cm'>Made with love, just for Sanbi.</p>
+  </div>
+  <div class='sx'>
+    <div class='card rv'><span class='rib'>🎀</span><h2 class='ct'>DEAR SANBI ♡</h2><p class='cb'>Happy Birthday, Sanbi! 🎂💜</p><p class='cm'>Wishing you a day full of happiness, your favourite music, beautiful memories, and all the little things that make you smile. You deserve a year as wonderful as you are. Keep shining, birthday girl! ✨</p><p aria-hidden='true'>💜 ✦ ♡ ✦ 💜</p></div>
+    <div id='cake' class='rv'></div>
+  </div>
+  <div class='sx'>
+    <p class='kk2 rv'>AND A LITTLE EXTRA LOVE…</p>
+    <h2 class='b2v rv'>V — KIM TAEHYUNG 💜</h2>
+    <p class='b2 rv' style='font-size:1.5rem'>Your Favourite Star</p>
+    <div class='pw rv'><div class='pc' id='pc'><div id='vmain'></div></div><span class='ar a1' aria-hidden='true'>💜</span><span class='ar a2' aria-hidden='true'>✦</span><span class='ar a3' aria-hidden='true'>♪</span><span class='ar a4' aria-hidden='true'>💜</span></div>
+    <p class='cm rv'>Happy Birthday, Sanbi! 💜 May your day be filled with beautiful moments, happy surprises, and music that makes your heart smile. Keep being your wonderful self!</p>
+    <p class='sm rv'>A playful, fan-made birthday surprise.</p>
+    <button class='bbtn' id='sendv'>SEND SOME LOVE TO V 💜</button>
+    <p class='ms hd' id='vdone' role='status'>MISSION COMPLETE: EXTRA PURPLE LOVE DELIVERED! ✨</p>
+  </div>
+  <div class='sx'>
+    <h2 class='b2v rv'>YOUR LITTLE PURPLE SCRAPBOOK 💜</h2>
+    <div class='gal' id='gal'></div>
+  </div>
+  <div class='sx'>
+    <p class='kk2 rv'>READY FOR A LITTLE PURPLE MAGIC?</p>
+    <button class='bbtn' id='spk' style='font-size:1.3rem;padding:16px 32px'>MAKE IT SPARKLE! ✨</button>
+    <div class='hd' id='spr' role='status'><h2 class='b2v' style='margin:0 auto 10px'>IT'S YOUR DAY, SANBI!! 🎉</h2><p class='cm'>May your year be filled with love, laughter, unforgettable memories, and a soundtrack full of your favourite songs. Keep dreaming big and shining bright! 💜</p></div>
+  </div>
+  <div class='sx fn'>
+    <p class='kk2 rv'>ONE MORE THING, SANBI… 💜</p>
+    <h2 class='b2v rv'>Happy Birthday!</h2>
+    <p class='cm rv'>Keep smiling. Keep dreaming. Keep shining.</p>
+    <p class='cm rv'>May your world always be filled with music, love, happiness, and a little purple magic. You deserve all the beautiful things life has to offer. ♡</p>
+    <div class='grp rv' id='grp'></div>
+    <p class='mw rv'>MADE WITH LOVE, JUST FOR YOU. 💜</p>
+  </div>
+  <div class='sx t4'>
+    <p class='cm rv'>Your purple universe is full of surprises… but we're not done yet. ✨</p>
+    <button class='bbtn' id='to5'>LET'S SEE →</button>
+  </div>
+</div>
+<div id='scene-05' role='region' aria-label='Scene 05: a chat with Sanbi'>
+  <div class='c5' id='c5'>
+    <div class='ch'><span class='av' aria-hidden='true'>S</span><div><b>Sanbi 💜</b><small>online now</small></div></div>
+    <div class='cl' id='cl' aria-live='polite'></div>
+    <div class='cf'><button class='bbtn' id='nx5'>NEXT →</button></div>
+  </div>
+  <div class='sl hd' id='sl1'>
+    <span class='sk' style='top:12%;left:6%;--r:-10deg' aria-hidden='true'>🧓</span><span class='sk' style='top:16%;right:7%;--r:12deg' aria-hidden='true'>🦴</span><span class='sk' style='bottom:14%;left:7%;--r:8deg' aria-hidden='true'>🕯️</span><span class='sk' style='bottom:13%;right:6%;--r:-8deg' aria-hidden='true'>😭</span>
+    <p class='kk2'>ONE LAST THING…</p>
+    <h2 class='bn'>16 already?! You're getting old, Sanbi. 😭😂</h2>
+    <p class='bn2'>Just kiddinggg. Happy Birthday!! 💗</p>
+    <button class='bbtn sn5' data-n='2'>NEXT →</button>
+  </div>
+  <div class='sl hd' id='sl2'>
+    <p class='kk2'>FROM ME, TO YOU ♡</p>
+    <div class='nt'>I'm really glad you're you, Sanbi. I hope this new year of your life brings you happiness, wonderful memories, lots of laughter, and countless reasons to smile. Keep being your amazing self. Happy 16th Birthday! 💗</div>
+    <button class='bbtn sn5' data-n='3'>NEXT →</button>
+  </div>
+  <div class='sl hd' id='sl3'>
+    <div style='font-size:4rem' aria-hidden='true'>💗</div>
+    <h2 class='t3x'>THANK YOU FOR BEING YOU 💗</h2>
+    <p class='cm'>I hope this little birthday surprise made you smile.</p>
+    <p class='cm'>Have the best day, Sanbi. Happy 16th Birthday! 🎂✨</p>
+    <p class='b2' style='font-size:1.4rem'>Made with love, just for you. ♡</p>
+    <button class='bbtn' id='again'>BACK TO THE BEGINNING ↺</button>
+  </div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let seen=false;try{seen=!!sessionStorage.getItem('sanbiIntro')}catch(e){}
+const play=!seen&&!RM;
+if(!play)$('#hero').classList.add('static');
+try{sessionStorage.setItem('sanbiIntro','1')}catch(e){}
+
+/* ---------- Audio: uses background.mp3, party-popper.mp3, sparkle.mp3, click.mp3 if present; never auto-plays ---------- */
+let unlocked=false,muted=false,musicOn=false,cur=null,ac;
+const F={};
+['background','party-popper','sparkle','click'].forEach(n=>{try{const a=new Audio(n+'.mp3');a.preload='auto';a.addEventListener('error',()=>{a.bad=true;if(n==='background')$('#music').hidden=true});a.addEventListener('canplay',()=>{if(n==='background'&&!a.bad)$('#music').hidden=false});a.addEventListener('loadeddata',()=>{if(n==='background'&&!a.bad)$('#music').hidden=false});F[n]=a}catch(e){}});
+if(F.background){F.background.loop=true;F.background.volume=.25}
+['pointerdown','keydown','touchstart','wheel'].forEach(ev=>addEventListener(ev,()=>{unlocked=true},{once:true,passive:true}));
+function synth(n){try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();ac.resume();const T=ac.currentTime,seq={'party-popper':[[500,0,.15,200],[800,.08,.2,400]],sparkle:[[2093,0,.2],[2637,.07,.2],[3136,.14,.3]],click:[[650,0,.08,320]]}[n]||[];seq.forEach(([f,t,d,f2])=>{const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(f,T+t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,T+t+d);g.gain.setValueAtTime(.0001,T+t);g.gain.exponentialRampToValueAtTime(.08,T+t+.02);g.gain.exponentialRampToValueAtTime(.0001,T+t+d);o.connect(g).connect(ac.destination);o.start(T+t);o.stop(T+t+d+.05)})}catch(e){}}
+function sfx(n){if(muted||!unlocked)return;if(cur){try{cur.pause();cur.currentTime=0}catch(e){}cur=null}const a=F[n];if(a&&!a.bad&&a.readyState>=3){a.currentTime=0;a.volume=.6;cur=a;a.play().catch(()=>synth(n))}else synth(n)}
+function setMusic(){const a=F.background;if(!a||a.bad)return;if(musicOn&&!muted)a.play().catch(()=>{});else a.pause()}
+$('#music').onclick=function(){unlocked=true;musicOn=!musicOn;this.setAttribute('aria-pressed',musicOn);this.style.background=musicOn?'#fff':'';setMusic()};
+$('#mute').onclick=function(){unlocked=true;muted=!muted;this.textContent=muted?'🔇':'🔊';this.setAttribute('aria-pressed',muted);if(muted&&cur){cur.pause();cur=null}setMusic()};
+
+/* ---------- Floating decorations ---------- */
+const fx=$('#fx');['💗','✨','⭐','🎀','💗','✨','🤍','⭐','🎀','✨','💗','🤍'].forEach((c,i)=>{const s=document.createElement('span');s.textContent=c;s.style.cssText=`left:${(i*37+8)%94}%;top:${(i*53+6)%90}%;font-size:${16+(i%4)*7}px;animation-delay:${-i*.8}s;animation-duration:${6+i%4}s`;fx.append(s)});
+
+/* ---------- Confetti (canvas, stops itself) ---------- */
+const cv=$('#cf'),cx=cv.getContext('2d'),COL=['#C8B6FF','#FFB7D5','#B8E7FF','#fff','#FFD98E','#ff8fb8'];
+let P=[],raf=0,shower=0,dpr=Math.min(devicePixelRatio||1,2);
+function fit(){cv.width=innerWidth*dpr;cv.height=innerHeight*dpr}fit();addEventListener('resize',fit);
+function add(x,y,vx,vy,big){P.push({x,y,vx,vy,w:(big?7:5)+Math.random()*6,h:4+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.35,c:COL[P.length%COL.length]})}
+function burst(x,y,n,a0,a1,sp){if(RM)return;for(let i=0;i<n;i++){const a=a0+Math.random()*(a1-a0),s=sp*(.5+Math.random()*.6);add(x,y,Math.cos(a)*s,Math.sin(a)*s,1)}run()}
+function run(){if(!raf)raf=requestAnimationFrame(tick)}
+function tick(){cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,innerWidth,innerHeight);P=P.filter(p=>p.y<innerHeight+30);for(const p of P){p.vy+=.22;p.vx*=.985;p.vy*=.992;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore()}raf=(P.length||shower)?requestAnimationFrame(tick):0;if(!raf)cx.clearRect(0,0,innerWidth,innerHeight)}
+function popAll(){const y=innerHeight-50,W=innerWidth;burst(34,y,70,-1.4,-.5,15);burst(W-34,y,70,-Math.PI+.5,-Math.PI+1.4,15);shower=1;let k=0;const iv=setInterval(()=>{for(let i=0;i<4;i++)add(Math.random()*W,-10,(Math.random()-.5)*1.5,1+Math.random()*2);if(++k>38){clearInterval(iv);shower=0}},100)}
+if(play){setTimeout(()=>{popAll();sfx('party-popper')},350);setTimeout(()=>{burst(34,innerHeight-50,35,-1.3,-.6,12);burst(innerWidth-34,innerHeight-50,35,-2.5,-1.8,12)},1100)}
+
+/* ---------- Scroll reveal ---------- */
+let shown=false;
+function reveal(){if(shown)return;shown=true;['#rv1','#go'].forEach((s,i)=>setTimeout(()=>$(s).classList.add('in'),i*250));sfx('sparkle');const r=$('#go').getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,40,0,6.28,7)}
+new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting))reveal()},{threshold:.45}).observe($('#reveal'));
+$('#hint').onclick=()=>{unlocked=true;sfx('click');$('#reveal').scrollIntoView({behavior:RM?'auto':'smooth'})};
+
+/* ---------- Navigation to the Scene 02 placeholder ---------- */
+function route(){const h=location.hash;[2,3,4,5].forEach(n=>document.body.classList.toggle('s'+n,h==='#scene-0'+n));scrollTo(0,0);if(h==='#scene-04'){S4.scrollTop=0;[60,500,1500].forEach(t=>setTimeout(chk,t))}const f=h==='#scene-02'?$('#expand'):h==='#scene-03'?$('#back3'):h==='#scene-05'?$('#back5'):null;if(f)f.focus({preventScroll:true})}
+$('#go').onclick=()=>{unlocked=true;sfx('click');location.hash='#scene-02'};
+$('#back2').onclick=()=>{sfx('click');location.hash='#scene-01'};
+$('#back3').onclick=()=>{sfx('click');location.hash='#scene-02'};
+$('#kat').onclick=()=>{unlocked=true;sfx('click');location.hash='#scene-03'};
+(function(){const tr=$('#tr');['♪','♫','✦','♡','✧','♪','✦','♫','♡','✧','♪','✦','♫','✧'].forEach((c,i)=>{const s=document.createElement('span');s.textContent=c;s.className='tp';s.setAttribute('aria-hidden','true');s.style.cssText=`left:${(i*37+6)%92}%;top:${8+(i*61)%84}%;font-size:${16+(i%4)*8}px;animation-delay:${-i*.9}s;animation-duration:${5+i%4}s`;tr.append(s)});const els=tr.querySelectorAll('.rv2');if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.4});els.forEach(e=>io.observe(e))})();
+
+/* ---------- Scene 02: Jujutsu Kaisen birthday domain ---------- */
+/* EDIT ME: paste data: image URIs for the anime stickers; "" keeps the labelled placeholder */
+const J={stk:{'Gojo sticker':'gojo-sticker.jpg','Nanami sticker':'nanami-sticker.avif'},final:"Infinite Starlight is fully awakened: Gojo-inspired Limitless energy, KATSEYE star power, BTS emotion, and Sanbi's own cosmic rhythm now shine together. Domain Expansion complete — Infinite Idolverse is yours. ✨💙💜"};
+const S2=$('#scene-02'),jst=$('#jst');let en=0;
+for(let i=0;i<40;i++){const s=document.createElement('i');s.style.cssText=`left:${(i*29)%100}%;top:${(i*47)%100}%;animation-delay:${-i*.4}s;animation-duration:${2+i%4}s`;jst.append(s)}
+function setCol(a){COL.length=0;COL.push(...a)}
+function st(n){S2.querySelectorAll('.st').forEach(e=>e.classList.toggle('on',e.id==='j'+n));S2.scrollTop=0}
+function shw(id){const e=$(id);e.classList.remove('hide');e.scrollIntoView({behavior:RM?'auto':'smooth',block:'nearest'})}
+$('#expand').onclick=()=>{unlocked=true;sfx('sparkle');setCol(['#4FC3FF','#8B5CF6','#EAF2FF','#E8C76A']);S2.classList.add('boom');$('#flash').classList.add('on');burst(innerWidth/2,innerHeight/2,70,0,6.28,11);setTimeout(()=>{st(2);$('#flash').classList.remove('on')},RM?0:850)};
+const T={g:"Limitless starlight activated. No sadness can cross Sanbi's glowing barrier today. 🔵✨",n:"Today is officially overtime-free. Clock out, relax, and enjoy your day. 🟡"};
+S2.querySelectorAll('.t').forEach(b=>b.onclick=e=>{sfx('click');const t=b.dataset.t;S2.classList.remove('g','n');S2.classList.add(t);setCol(t==='g'?['#4FC3FF','#8B5CF6','#EAF2FF']:['#E8C76A','#fff3c4','#8B5CF6']);$('#o2').textContent=T[t];shw('#o2');shw('#c2');burst(e.clientX||innerWidth/2,e.clientY||innerHeight/2,45,0,6.28,9);sfx('sparkle')});
+$('#c2').onclick=()=>{sfx('click');st(3)};
+$('#orb').onclick=function(e){en=Math.min(100,en+10+(Math.random()*6|0));$('#mi').style.width=en+'%';$('#mt').setAttribute('aria-valuenow',en);$('#pct').textContent='Cursed energy: '+en+'%';const r=this.getBoundingClientRect();burst(e.clientX||r.left+r.width/2,e.clientY||r.top+r.height/2,10,0,6.28,5);sfx('click');if(en>=100){this.disabled=true;this.textContent='MAX';$('#fm').textContent=J.final;const sl=$('#slots');sl.innerHTML='';for(const k in J.stk){const d=document.createElement('div');d.className='slot';if(J.stk[k]){const im=document.createElement('img');im.src=J.stk[k];im.alt=k;d.append(im)}else d.textContent=k+' goes here';sl.append(d)}shw('#o3');shw('#pw');burst(innerWidth/2,innerHeight/2,80,0,6.28,12);sfx('party-popper')}};
+$('#pw').onclick=()=>{sfx('click');st(4)};
+const dn=new Set();
+function fin(k){dn.add(k);if(dn.size>1){const t=$('#tr');t.classList.remove('hide');S2.classList.add('fin');t.querySelectorAll('.rv2').forEach(e=>e.classList.add('in'));setTimeout(()=>$('#kat').scrollIntoView({behavior:RM?'auto':'smooth',block:'center'}),RM?0:300)}}
+function open2(b){b.classList.add('open');b.setAttribute('aria-expanded','true')}
+$('#p1').onclick=function(){open2(this);sfx('sparkle');setCol(['#4FC3FF','#fff','#FFB7D5','#C8B6FF']);burst(innerWidth/2,innerHeight*.6,70,-3.4,.3,10);if(!RM){const r=$('#rb');r.classList.remove('on');void r.getBoundingClientRect();r.classList.add('on');setTimeout(()=>r.classList.remove('on'),3400)}fin(1)};
+$('#p2').onclick=function(){open2(this);sfx('party-popper');setCol(['#FFB7D5','#C8B6FF','#B8E7FF','#E8C76A','#fff']);burst(innerWidth/2,innerHeight*.5,90,0,6.28,12);if(!RM){S2.classList.add('idol');setTimeout(()=>S2.classList.remove('idol'),5500)}fin(2)};
+/* ---------- Scene 03: KATSEYE birthday surprise ---------- */
+/* Lara image for the KATSEYE scene */
+const K={stk:'lara-img.jpg'};
+(function(){if(K.stk){const f=$('#kf');f.textContent='';const im=document.createElement('img');im.src=K.stk;im.alt='Floating hearts and star stickers';f.append(im)}
+const kp=$('#kp');['💗','✦','🎀','★','💗','✧','💖','✦','★','🎀','✧','💗','✦','💖','★','✧'].forEach((c,i)=>{const s=document.createElement('span');s.textContent=c;s.style.cssText=`left:${(i*41+5)%92}%;top:${(i*59+4)%92}%;font-size:${16+(i%4)*7}px;animation-delay:${-i*.8}s;animation-duration:${5+i%4}s`;kp.append(s)})})();
+$('#laraReveal').onclick=function(){
+  unlocked=true;sfx('click');
+  const note=$('#laraNote');note.hidden=false;
+  this.hidden=true;$('#to4').hidden=false;
+  setCol(['#FFB7D5','#DCC8FF','#fff','#FF75AD']);
+  const r=this.getBoundingClientRect();
+  burst(r.left+r.width/2,r.top+r.height/2,70,0,6.28,10);
+  hearts(['💗','✨','🎀','💖'],12);
+  sfx('sparkle');
+  note.scrollIntoView({behavior:RM?'auto':'smooth',block:'nearest'});
+};
+addEventListener('hashchange',()=>{if(location.hash==='#scene-03'){setCol(['#FFB7D5','#DCC8FF','#fff','#FF75AD']);burst(innerWidth/2,innerHeight*.4,60,0,6.28,9)}});
+/* ---------- Scene 04: BTS purple scrapbook ---------- */
+/* EDIT ME: paste data: image URIs (transparent PNG/WebP). "" keeps the labelled placeholder */
+const B={s:{RM:'rm-sticker.png',Jin:'jin-sticker.png',SUGA:'suga-sticker.gif','j-hope':'j-hope-sticker.jpg',Jimin:'jimin-sticker.jpg',V:'v-sticker.png','Jung Kook':'jung-kook-sticker.png'},p:{RM:'rm-photo.jpg',Jin:'jin-photo.jpg',SUGA:'suga-photo.jpg','j-hope':'j-hope-photo.jpg',Jimin:'jimin-photo.jpg',V:'v-photo.jpg','Jung Kook':'jung-kook-photo.jpg'},vmain:'kim-taehyung-main.jpg',group:'bts-group-sticker.webp',cake:'bts-birthday-cake.jpg'};
+const S4=$('#scene-04'),MB=[['RM','RM'],['Jin','JIN'],['SUGA','SUGA'],['j-hope','J-HOPE'],['Jimin','JIMIN'],['V','V / KIM TAEHYUNG'],['Jung Kook','JUNG KOOK']];
+function stk(label,url,cls,css){const d=document.createElement('div');d.className='stk '+(cls||'');d.style.cssText=css||'';if(url){const i=document.createElement('img');i.src=url;i.alt=label;d.append(i);d.classList.add('has')}else d.textContent='[ '+label+' ]';return d}
+const lab=k=>MB.find(m=>m[0]===k)[1];
+[['RM','top:72px;left:4%',62,-9],['SUGA','top:96px;left:40%',50,5],['Jin','top:70px;right:4%',62,8],['j-hope','bottom:158px;left:3%',60,7],['Jimin','bottom:162px;right:3%',60,-7],['Jung Kook','bottom:34px;right:6%',58,10],['V','bottom:30px;left:50%;margin-left:-52px',104,-4]].forEach(([k,c,w,r])=>$('#hero4').append(stk(lab(k)+' STICKER',B.s[k],'h',c+';--w:'+w+';--r:'+r+'deg')));
+$('#cake').append(stk('BIRTHDAY CAKE OR PURPLE HEART STICKER',B.cake,'','width:140px;height:100px;--r:5deg'));
+$('#vmain').append(stk('V / KIM TAEHYUNG MAIN STICKER HERE',B.vmain,'vm'));
+MB.forEach(([k],i)=>{const c=document.createElement('div');c.className='gc';c.style.setProperty('--r',[-4,3,-2,4,-3,2,-1][i]+'deg');c.append(stk((k==='V'?'V':lab(k))+' PHOTO STICKER',B.p[k],'ph'));$('#gal').append(c)});
+(function(){const g=$('#grp');g.append(stk('BTS GROUP STICKER HERE',B.group,'gm'));[['RM','top:0;left:2%'],['Jin','top:0;right:2%'],['SUGA','top:40%;left:0'],['j-hope','top:40%;right:0'],['Jimin','bottom:0;left:8%'],['Jung Kook','bottom:0;right:8%'],['V','bottom:-6px;left:50%;margin-left:-41px']].forEach(([k,c])=>g.append(stk(lab(k)+' STICKER',B.s[k],k==='V'?'vv':'mm',c)))})();
+function deco(el,n){const set=['💜','✦','♪','✧','🎀','★'];for(let i=0;i<n;i++){const s=document.createElement('span');s.className='dc';s.setAttribute('aria-hidden','true');s.textContent=set[i%6];const L=i%2?86+(i*7)%9:1+(i*5)%9;s.style.cssText=`left:${L}%;top:${6+(i*37)%88}%;font-size:${14+(i%3)*6}px;animation-delay:${-i*.9}s;animation-duration:${6+i%4}s`;el.append(s)}}
+S4.querySelectorAll('.sx').forEach((s,i)=>deco(s,i?7:12));
+function chk(){S4.querySelectorAll('.rv:not(.in)').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight*.92)e.classList.add('in')})}
+S4.addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);S4.classList.add('rvon');
+function hearts(arr,n){if(RM)return;for(let i=0;i<n;i++){const s=document.createElement('span');s.className='ri';s.textContent=arr[i%arr.length];s.style.cssText=`left:${5+Math.random()*90}%;font-size:${18+Math.random()*18}px;animation-delay:${Math.random()*.6}s`;document.body.append(s);setTimeout(()=>s.remove(),4200)}}
+$('#sendv').onclick=function(){unlocked=true;sfx('click');setCol(['#8B5CF6','#DCC8FF','#FFC7E2','#fff']);const r=this.getBoundingClientRect();burst(r.left+r.width/2,r.top,40,-3.3,-.2,9);hearts(['💜','✨','💜'],12);const pc=$('#pc');pc.classList.remove('lit');void pc.offsetWidth;pc.classList.add('lit');const d=$('#vdone');d.classList.remove('hd');d.classList.add('sh')};
+let busy=0;
+$('#spk').onclick=function(){if(busy)return;busy=1;setTimeout(()=>busy=0,3500);unlocked=true;sfx('click');setTimeout(()=>sfx('party-popper'),250);setCol(['#8B5CF6','#DCC8FF','#FFC7E2','#fff','#C8DFFF']);burst(innerWidth*.25,innerHeight*.7,55,-2.6,-.9,13);burst(innerWidth*.75,innerHeight*.7,55,-2.3,-.5,13);popAll();hearts(['🎉','🎊','✨','💜'],18);S4.classList.remove('glow');void S4.offsetWidth;S4.classList.add('glow');const s=$('#spr');s.classList.remove('hd');s.classList.add('sh');this.textContent='POP AGAIN 🎉';s.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'})};
+$('#to4').onclick=()=>{unlocked=true;sfx('click');location.hash='#scene-04'};
+$('#to5').onclick=()=>{unlocked=true;sfx('click');location.hash='#scene-05'};
+/* ---------- Scene 05: chat + three ending slides ---------- */
+const CH=[['me',`Sooo, birthday girl… you're 16 now!! 🎂💗`],['me',`You're getting older day by day, huh? 😂 Don't let it go to your head!`],['sn',`EXCUSE ME?? 😭💀`],['me',`HAHAHA, I'm just teasing you! You know I had to roast you a little on your birthday. 😂`],['me',`But seriously, I hope your day goes really well. I hope you have the happiest birthday, make amazing memories, listen to all your favourite music, and smile a LOT today. 💗`],['me',`And now that we're both 16, we're officially getting older together. 😭🤝`],['me',`Jokes aside, I'm really glad I get to celebrate you. Stay your silly, wonderful self, okay? You deserve lots of happiness. ♡`]];
+let ci=0,tmr=0;const nb=$('#nx5');
+function go5(n){clearTimeout(tmr);[1,2,3].forEach(i=>$('#sl'+i).classList.toggle('hd',i!==n));$('#c5').classList.toggle('hd',n>0);if(n===1)sfx('sparkle');if(n===3){setCol(['#FFC2D9','#DCC8FF','#fff','#8B5CF6']);burst(innerWidth/2,innerHeight*.45,50,0,6.28,9);hearts(['💗','✨'],10)}}
+function nextMsg(){if(ci>=CH.length){go5(1);return}const[w,t]=CH[ci++],L=$('#cl'),ty=document.createElement('div');nb.disabled=true;ty.className='m ty '+w;ty.innerHTML='<i></i><i></i><i></i>';L.append(ty);L.scrollTop=L.scrollHeight;tmr=setTimeout(()=>{ty.remove();const m=document.createElement('div');m.className='m '+w;m.textContent=t;L.append(m);L.scrollTop=L.scrollHeight;if(w==='sn')sfx('sparkle');nb.disabled=false},RM?300:Math.min(1500,500+t.length*18))}
+function start5(){clearTimeout(tmr);$('#cl').innerHTML='';ci=0;go5(0);nb.disabled=true;tmr=setTimeout(nextMsg,500)}
+nb.onclick=()=>{unlocked=true;sfx('click');nextMsg()};
+$('#scene-05').querySelectorAll('.sn5').forEach(b=>b.onclick=()=>{unlocked=true;sfx('click');go5(+b.dataset.n)});
+$('#again').onclick=()=>{unlocked=true;sfx('click');location.hash='#scene-01'};
+deco($('#scene-05'),6);[1,2,3].forEach(i=>deco($('#sl'+i),8));
+addEventListener('hashchange',()=>{if(location.hash==='#scene-05')start5()});if(location.hash==='#scene-05')start5();
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
